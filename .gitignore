@@ -1,0 +1,12 @@
+package-lock.json
+Cargo.lock
+.vscode
+.idea
+.DS_Store
+res/*
+target/*
+node_modules/*
+neardev/*
+scripts/app.test.js
+scripts/sanity-check.js
+scripts/sanity-check2.js

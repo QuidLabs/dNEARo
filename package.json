@@ -1,0 +1,25 @@
+{
+    "name": "quid-near",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "hoist-credentials": "mkdir ./neardev/testnet && mkdir ./neardev/mainnet && node ./scripts/hoist-credentials.js",
+        "deploy": "(near dev-deploy --wasmFile=./res/quid.wasm || exit 0) && node ./scripts/patch-config.js",
+        "dev": "rm -rf res && ./build.sh && rm -rf neardev && npm run deploy && npm run hoist-credentials && npm run test",
+        "test": "mocha ./scripts/app.test.js --timeout 42000"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bn": "^1.0.5",
+        "bn.js": "^5.2.0",
+        "chai": "^4.3.4",
+        "dotenv": "^9.0.0",
+        "js-sha256": "^0.9.0",
+        "mocha": "^9.0.3",
+        "near-api-js": "^0.42.0",
+        "near-units": "^0.1.9"
+    }
+}
